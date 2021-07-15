@@ -33,7 +33,7 @@ android_library {
 	   
     ],
 
-    aaptflags: ["--extra-packages com.octavi.lab"],
+    aaptflags: ["--extra-packages com.octavi.lab","--extra-packages com.factor.bouncy"],
 
     resource_dirs: ["res",
                     "OctaviLab/res",
@@ -69,6 +69,7 @@ android_library {
         "VendorSupport-preference",
         "faceunlock_framework",
         "glide",
+        "bouncy",
     ],
 
     libs: [
@@ -113,4 +114,10 @@ android_library_import {
 android_library_import {
     name: "glide",
     aars: ["libs/glide-4.9.0.aar"],
+}
+
+android_library_import {
+    name: "bouncy",
+    aars: ["libs/bouncy-release.aar"],
+    sdk_version: "current",
 }
