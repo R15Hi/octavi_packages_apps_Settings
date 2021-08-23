@@ -461,4 +461,6 @@
     <string name="preferred_refresh_rate_title">Preferred refresh rate</string>
     <string name="max_refresh_rate_title">Maximum refresh rate</string>
 
+    <!-- Used in SetupWizard Wi-Fi network selection page [CHAR LIMIT=60] -->
+    <string name="wifi_setup_wizard_title">Select Wi\u2011Fi network</string>
 </resources>
