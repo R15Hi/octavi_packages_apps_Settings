@@ -28,6 +28,7 @@
         <com.android.settingslib.RestrictedPreference
             android:key="brightness"
             android:title="@string/brightness"
+            settings:layout="@layout/dot_dashboard_preference_phone"
             settings:iconSpaceReserved="false" 
             settings:keywords="@string/keywords_display_brightness_level"
             settings:useAdminDisabledSummary="true"
@@ -38,6 +39,7 @@
         <Preference
             android:key="auto_brightness_entry"
             android:title="@string/auto_brightness_title"
+            settings:layout="@layout/dot_dashboard_preference_bottom"
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.display.AutoBrightnessSettings"
             settings:iconSpaceReserved="false" 
@@ -53,6 +55,7 @@
             settings:iconSpaceReserved="false" 
             android:key="night_display"
             android:title="@string/night_display_title"
+            settings:layout="@layout/dot_dashboard_preference_top"
             android:fragment="com.android.settings.display.NightDisplaySettings"
             android:widgetLayout="@null"
             settings:widgetLayout="@null"/>
@@ -60,6 +63,7 @@
         <com.android.settingslib.RestrictedPreference
             android:key="wallpaper"
             android:title="@string/wallpaper_settings_title"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             settings:keywords="@string/keywords_display_wallpaper"
             settings:useAdminDisabledSummary="true"
             settings:iconSpaceReserved="false" 
@@ -70,6 +74,7 @@
         <com.android.settings.display.TimeoutListPreference
             android:key="screen_timeout"
             android:title="@string/screen_timeout"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             android:summary="@string/summary_placeholder"
             android:entries="@array/screen_timeout_entries"
             android:entryValues="@array/screen_timeout_values"
@@ -78,7 +83,8 @@
 
        <Preference
             android:key="livedisplay"
-	    android:title="@*android:string/live_display_title"
+	       android:title="@*android:string/live_display_title"
+	       settings:layout="@layout/dot_dashboard_preference_middle"
             android:summary="@string/live_display_summary"
             settings:iconSpaceReserved="false"
 	    settings:controller="com.android.settings.livedisplay.LiveDisplayPreferenceController">
@@ -88,6 +94,7 @@
         <Preference
             android:key="adaptive_sleep_entry"
             android:title="@string/adaptive_sleep_title"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.display.AdaptiveSleepSettings"
             settings:iconSpaceReserved="false" 
@@ -96,6 +103,7 @@
         <SwitchPreference
             android:key="auto_rotate"
             android:title="@string/accelerometer_title"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             settings:keywords="@string/keywords_auto_rotate"
             settings:iconSpaceReserved="false" 
             settings:controller="com.android.settings.display.AutoRotatePreferenceController" />
@@ -103,6 +111,7 @@
         <Preference
             android:key="color_mode"
             android:title="@string/color_mode_title"
+            settings:layout="@layout/dot_dashboard_preference_bottom"
             android:fragment="com.android.settings.display.ColorModePreferenceFragment"
             settings:controller="com.android.settings.display.ColorModePreferenceController"
             settings:iconSpaceReserved="false" 
@@ -144,6 +153,7 @@
         <Preference
             android:key="font_size"
             android:title="@string/title_font_size"
+            settings:layout="@layout/dot_dashboard_preference_top"
             android:fragment="com.android.settings.display.ToggleFontSizePreferenceFragment"
             settings:iconSpaceReserved="false" 
             settings:controller="com.android.settings.display.FontSizePreferenceController" />
@@ -151,29 +161,34 @@
         <com.android.settings.display.ScreenZoomPreference
             android:key="display_settings_screen_zoom"
             android:title="@string/screen_zoom_title"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             settings:iconSpaceReserved="false" 
             android:fragment="com.android.settings.display.ScreenZoomSettings"/>
 
         <com.android.settings.display.DensityPreference
             android:key="density"
             settings:iconSpaceReserved="false" 
+            settings:layout="@layout/dot_dashboard_preference_middle"
             android:title="@string/developer_smallest_width" />
 
         <SwitchPreference
             android:key="show_operator_name"
             android:title="@string/show_operator_name_title"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             settings:iconSpaceReserved="false" 
             android:summary="@string/show_operator_name_summary" />
 
         <Preference
             settings:iconSpaceReserved="false" 
             android:key="screensaver"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             android:title="@string/screensaver_settings_title"
             android:fragment="com.android.settings.dream.DreamSettings" />
 
         <Preference
             settings:iconSpaceReserved="false" 
             android:key="lockscreen_from_display_settings"
+            settings:layout="@layout/dot_dashboard_preference_bottom"
             android:title="@string/lockscreen_settings_title"
             android:fragment="com.android.settings.security.LockscreenDashboardFragment"
             settings:keywords="@string/keywords_ambient_display_screen"
@@ -188,6 +203,7 @@
         <SwitchPreference
             settings:iconSpaceReserved="false" 
             android:key="camera_gesture"
+            settings:layout="@layout/dot_pref_card_sin"
             android:title="@string/camera_gesture_title"
             android:summary="@string/camera_gesture_desc" />
 
@@ -205,6 +221,7 @@
         <SwitchPreference
             settings:iconSpaceReserved="false" 
             android:key="pocket_judge"
+            settings:layout="@layout/dot_pref_card_sin"
             android:title="@string/pocket_judge_title"
             android:summary="@string/pocket_judge_summary" />
 
@@ -225,12 +242,14 @@
         <ListPreference
             settings:iconSpaceReserved="false" 
             android:key="display_cutout_emulation"
+            settings:layout="@layout/dot_dashboard_preference_top"
             android:title="@string/display_cutout_emulation"
             settings:keywords="@string/display_cutout_emulation_keywords" />
 
         <Preference
             settings:iconSpaceReserved="false" 
             android:key="display_cutout_force_fullscreen_settings"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             android:title="@string/display_cutout_force_fullscreen_title"
             android:summary="@string/display_cutout_force_fullscreen_summary"
             android:fragment="com.android.settings.display.DisplayCutoutForceFullscreenSettings"
@@ -239,11 +258,13 @@
         <ListPreference
             android:key="theme"
             android:title="@string/device_theme"
+            settings:layout="@layout/dot_dashboard_preference_middle"
             android:summary="@string/summary_placeholder" />
 
         <com.android.settings.display.FontDialogPreference
             android:key="custom_font"
             android:title="@string/font_picker_title"
+            settings:layout="@layout/dot_dashboard_preference_bottom"
             android:persistent="false" />
 
     </PreferenceCategory>

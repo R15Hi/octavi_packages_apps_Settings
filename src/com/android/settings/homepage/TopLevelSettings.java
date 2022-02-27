@@ -52,12 +52,23 @@ public class TopLevelSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.top_level_settings;
+        return R.xml.dot_top_level_settings;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
+            Preference pref = getPreferenceScreen().getPreference(i);
+            if (pref.isVisible() && pref.getTitle() != null &&
+               pref.getLayoutResource() != R.layout.dot_dashboard_preference_top && 
+                pref.getLayoutResource() != R.layout.dot_dashboard_preference_full && 
+                pref.getLayoutResource() != R.layout.dot_dashboard_preference_phone && 
+                pref.getLayoutResource() != R.layout.dot_dashboard_preference_bottom) {
+                pref.setLayoutResource(R.layout.dot_dashboard_preference_middle);
+                
+        }
+    }
         final RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
         recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
     }
@@ -109,7 +120,7 @@ public class TopLevelSettings extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.top_level_settings) {
+            new BaseSearchIndexProvider(R.xml.dot_top_level_settings) {
 
                 @Override
                 protected boolean isPageSearchEnabled(Context context) {

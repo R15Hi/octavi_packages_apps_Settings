@@ -30,6 +30,7 @@ import android.provider.Settings;
 import android.provider.Settings.System;
 import android.service.vr.IVrManager;
 import android.util.Log;
+import com.android.settings.R;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
@@ -109,6 +110,7 @@ public class BrightnessLevelPreferenceController extends AbstractPreferenceContr
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(KEY_BRIGHTNESS);
+        mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
     }
 
     @Override

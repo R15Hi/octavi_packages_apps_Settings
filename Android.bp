@@ -29,8 +29,8 @@ android_library {
 
     srcs: ["src/**/*.java",
 	   "src/**/*.kt",
-           "OctaviLab/src/**/*.java",
-	   
+       "OctaviLab/src/**/*.java",
+	   "src-dot/**/*.java",
     ],
 
     aaptflags: ["--extra-packages com.octavi.lab","--extra-packages com.factor.bouncy"],
@@ -38,6 +38,8 @@ android_library {
     resource_dirs: ["res",
                     "OctaviLab/res",
                     "TouchGestures/res",
+                    "res-dot",
+
     ],
 
     static_libs: [
@@ -121,3 +123,4 @@ android_library_import {
     aars: ["libs/bouncy-release.aar"],
     sdk_version: "current",
 }
+
