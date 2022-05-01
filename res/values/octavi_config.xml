@@ -28,9 +28,9 @@
     <string name="config_customDozePackage" translatable="false"></string>
 
     <!-- Battery Health -->
-    <string name="config_batCurCap"></string>
-    <string name="config_batDesCap"></string>
-    <string name="config_batChargeCycle"></string>
+    <string name="config_batCurCap">/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/battery/charge_counter</string>
+    <string name="config_batDesCap">/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/battery/charge_full</string>
+    <string name="config_batChargeCycle">/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/battery/cycle_count</string>
     <bool name="config_supportBatteryHealth">true</bool>
 
     <!-- Whether to show min/max refresh rate in display settings -->
