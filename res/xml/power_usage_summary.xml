@@ -83,6 +83,16 @@
         android:key="battery_charge_cycles"
         android:title="@string/battery_charge_cycles"
         android:selectable="false" />
+        
+    <com.android.settings.fuelgauge.PowerGaugePreference
+        android:key="battery_health_left"
+        android:title="@string/battery_health_left"
+        android:selectable="false" />
+
+     <com.android.settings.fuelgauge.PowerGaugePreference
+        android:key="battery_health_status"
+        android:title="@string/battery_health_status"
+        android:selectable="false" />    
 
     <com.android.settings.fuelgauge.PowerGaugePreference
         android:key="battery_temp"

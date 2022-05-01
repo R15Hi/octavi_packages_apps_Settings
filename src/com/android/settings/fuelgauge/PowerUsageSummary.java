@@ -101,10 +101,14 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     private static final String KEY_CURRENT_BATTERY_CAPACITY = "current_battery_capacity";
     private static final String KEY_DESIGNED_BATTERY_CAPACITY = "designed_battery_capacity";
     private static final String KEY_BATTERY_CHARGE_CYCLES = "battery_charge_cycles";
+    private static final String KEY_BATTERY_HEALTH_LEFT = "battery_health_left";
+    private static final String KEY_BATTERY_HEALTH_STATUS = "battery_health_status";
 
     private String mBatDesCap;
     private String mBatCurCap;
     private String mBatChgCyc;
+    private String mBatHthLeft;
+    private String mBatHthStatus;
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -125,6 +129,10 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     PowerGaugePreference mDesignedBatteryCapacity;
     @VisibleForTesting
     PowerGaugePreference mBatteryChargeCycles;
+    @VisibleForTesting
+    PowerGaugePreference mBatteryHealthLeft;
+    @VisibleForTesting
+    PowerGaugePreference mBatteryHealthStatus;
     @VisibleForTesting
     PowerGaugePreference mLastFullChargePref;
     @VisibleForTesting
@@ -276,6 +284,10 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                 KEY_DESIGNED_BATTERY_CAPACITY);
         mBatteryChargeCycles = (PowerGaugePreference) findPreference(
                 KEY_BATTERY_CHARGE_CYCLES);
+        mBatteryHealthLeft = (PowerGaugePreference) findPreference(
+                KEY_BATTERY_HEALTH_LEFT);
+        mBatteryHealthStatus = (PowerGaugePreference) findPreference(
+                KEY_BATTERY_HEALTH_STATUS);
         mLastFullChargePref = (PowerGaugePreference) findPreference(
                 KEY_TIME_SINCE_LAST_FULL_CHARGE);
         mBatteryTemp = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
@@ -412,6 +424,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         mBatDesCap = getResources().getString(R.string.config_batDesCap);
         mBatCurCap = getResources().getString(R.string.config_batCurCap);
         mBatChgCyc = getResources().getString(R.string.config_batChargeCycle);
+        mBatHthLeft = getResources().getString(R.string.config_batHthLeft);
+        mBatHthStatus = getResources().getString(R.string.config_batHthStatus);
 
         // Check availability of Battery Health
         Preference mDesignedHealthPref = (Preference) findPreference(KEY_DESIGNED_BATTERY_CAPACITY);
@@ -440,6 +454,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         mCurrentBatteryCapacity.setSubtitle(parseBatterymAhText(mBatCurCap));
         mDesignedBatteryCapacity.setSubtitle(parseBatterymAhText(mBatDesCap));
         mBatteryChargeCycles.setSubtitle(parseBatteryCycle(mBatChgCyc));
+        mBatteryHealthLeft.setSubtitle(parseHealthmAhText(mBatHthLeft));
+        mBatteryHealthStatus.setSubtitle(parseHealthStatus(mBatHthStatus));
         final long elapsedRealtimeUs = SystemClock.elapsedRealtime() * 1000;
         Intent batteryBroadcast = context.registerReceiver(null,
                 new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
@@ -640,6 +656,32 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     private String parseBatteryCycle(String file) {
         try {
             return Integer.parseInt(readLine(file)) + " Cycles";
+        } catch (IOException ioe) {
+            Log.e(TAG, "Cannot read battery cycle from "
+                    + file, ioe);
+        } catch (NumberFormatException nfe) {
+            Log.e(TAG, "Read a badly formatted battery cycle from "
+                    + file, nfe);
+        }
+        return getResources().getString(R.string.status_unavailable);
+    }
+    
+    private String parseHealthmAhText(String file) {
+        try {
+            return (Integer.parseInt(readLine(file))*100) / 4045 + " %";
+        } catch (IOException ioe) {
+            Log.e(TAG, "Cannot read battery health from "
+                    + file, ioe);
+        } catch (NumberFormatException nfe) {
+            Log.e(TAG, "Read a badly formatted battery health from "
+                    + file, nfe);
+        }
+        return getResources().getString(R.string.status_unavailable);
+    }
+    
+    private String parseHealthStatus(String file) {
+        try {
+            return Integer.parseInt(readLine(file)) + " mA ";
         } catch (IOException ioe) {
             Log.e(TAG, "Cannot read battery cycle from "
                     + file, ioe);
