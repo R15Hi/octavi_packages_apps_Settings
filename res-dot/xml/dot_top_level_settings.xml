@@ -22,6 +22,7 @@
 
     <Preference
         android:key="top_level_about_device"
+        android:icon="@drawable/ic_settings_new_about"
         android:order="-205"
         android:title="@string/dot_dashboard_device"
         android:summary="@string/summary_placeholder"
@@ -31,6 +32,7 @@
         
      <Preference
         android:key="top_level_octavi_lab"
+        android:icon="@drawable/ic_settings_new_octavi"
         android:order="-204"
         android:title="@string/octavi_lab_dash_title"
         android:summary="@string/octavi_lab_summary"
@@ -39,6 +41,7 @@
 
     <Preference
         android:key="top_level_network"
+        android:icon="@drawable/ic_settings_new_network"
         android:order="-190"
         android:summary="@string/summary_placeholder"
         android:title="@string/network_dashboard_title"
@@ -48,6 +51,7 @@
 
     <Preference
         android:key="top_level_connected_devices"
+        android:icon="@drawable/ic_settings_new_devices"
         android:order="-180"
         android:summary="@string/summary_placeholder"
         android:title="@string/connected_devices_dashboard_title"
@@ -57,6 +61,7 @@
 
     <Preference
         android:key="top_level_display"
+        android:icon="@drawable/ic_settings_new_display"
         android:order="-109"
         android:summary="@string/display_dashboard_summary"
         android:title="@string/display_settings"
@@ -66,6 +71,7 @@
     
     <Preference
         android:key="top_level_sound"
+        android:icon="@drawable/ic_settings_new_sound"
         android:order="-108"
         android:summary="@string/sound_dashboard_summary"
         android:title="@string/sound_settings"
@@ -74,6 +80,7 @@
 
     <Preference
         android:key="top_level_battery"
+        android:icon="@drawable/ic_settings_new_battery"
         android:order="-107"
         android:summary="@string/summary_placeholder"
         android:title="@string/power_usage_summary_title"
@@ -83,6 +90,7 @@
 
     <Preference
         android:key="top_level_notification"
+        android:icon="@drawable/ic_settings_new_apps"
         android:order="-106"
         android:title="@string/configure_notification_settings"
         android:summary="@string/app_and_notification_dashboard_summary"
@@ -91,6 +99,7 @@
 
     <Preference
         android:key="top_level_privacy"
+        android:icon="@drawable/ic_settings_new_privacy"
         android:order="-99"
         android:summary="@string/privacy_dashboard_summary"
         android:title="@string/privacy_dashboard_title"
@@ -99,6 +108,7 @@
 
     <Preference
         android:key="top_level_security"
+        android:icon="@drawable/ic_settings_new_security"
         android:order="-98"
         android:summary="@string/security_dashboard_summary"
         android:title="@string/security_settings_title"
@@ -108,6 +118,7 @@
 
     <Preference
         android:key="top_level_location"
+        android:icon="@drawable/ic_settings_new_location"
         android:order="-97"
         android:summary="@string/location_settings_loading_app_permission_stats"
         android:title="@string/location_settings_title"
@@ -117,6 +128,7 @@
 
     <Preference
         android:key="top_level_accounts"
+        android:icon="@drawable/ic_settings_new_accounts"
         android:order="-96"
         android:summary="@string/summary_placeholder"
         android:title="@string/account_dashboard_title"
@@ -126,6 +138,7 @@
 
     <Preference
         android:key="top_level_accessibility"
+        android:icon="@drawable/ic_settings_new_accessibility"
         android:order="-20"
         android:summary="@string/accessibility_settings_summary"
         android:title="@string/accessibility_settings"
@@ -135,6 +148,7 @@
 
     <Preference
         android:key="top_level_storage"
+        android:icon="@drawable/ic_settings_new_storage"
         android:order="-11"
         android:summary="@string/summary_placeholder"
         android:title="@string/storage_settings"
@@ -144,6 +158,7 @@
 
     <Preference
         android:key="top_level_support"
+        android:icon="@drawable/ic_settings_new_support"
         android:order="10"
         android:summary="@string/support_summary"
         android:title="@string/page_tab_title_support"
@@ -152,6 +167,7 @@
 
     <Preference
         android:key="top_level_system"
+        android:icon="@drawable/ic_settings_new_system_dashboard"
         android:order="20"
         android:summary="@string/system_dashboard_summary"
         android:title="@string/header_category_system"
