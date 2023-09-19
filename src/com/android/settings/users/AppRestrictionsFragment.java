@@ -665,6 +665,7 @@ public class AppRestrictionsFragment extends SettingsPreferenceFragment implemen
             if (intent.getPackage() != null && intent.getPackage().equals(packageName)) {
                 return;
             }
+            EventLog.writeEvent(0x534e4554, "223578534", -1 /* UID */, "");
             ResolveInfo resolveInfo = mPackageManager.resolveActivity(
                     intent, PackageManager.MATCH_DEFAULT_ONLY);
 
